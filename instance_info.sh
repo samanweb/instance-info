@@ -1,9 +1,12 @@
 #!/bin/bash
 
+# By Saman Wijesinghe
+
 # Function to display the menu
 show_menu() {
     clear
     echo "Instance Info 1.0"
+    echo "-----------------"
     echo "1. RAM Info"
     echo "2. Hard-Disk Info"
     echo "3. Battery Info"
@@ -12,20 +15,33 @@ show_menu() {
     echo "6. Exit"
 }
 
+
+
 # Function to display Ram info
 show_ram_info() {
+
+echo "-----------------"
+
     free -h
     read -p "Press Enter to continue..."
 }
 
+
 # Function to display Hard-disk info
 show_hard_disk_info() {
+
+echo "-----------------"
+
     df -h
     read -p "Press Enter to continue..."
 }
 
+
 # Function to display Battery info
 show_battery_info() {
+
+echo "-----------------"
+
     if command -v upower &>/dev/null; then
         upower -i /org/freedesktop/UPower/devices/battery_BAT0
     else
@@ -34,14 +50,22 @@ show_battery_info() {
     read -p "Press Enter to continue..."
 }
 
+echo "-----------------"
 # Function to display Processor info
 show_processor_info() {
+
+echo "-----------------"
+
     lscpu
     read -p "Press Enter to continue..."
 }
 
+
 # Function to display About
 show_about() {
+
+echo "-----------------"    
+    
     echo "
 
 By : Saman Wijseinghe 
@@ -68,3 +92,4 @@ while true; do
         *) echo "Invalid choice. Please enter a valid option." ;;
     esac
 done
+
